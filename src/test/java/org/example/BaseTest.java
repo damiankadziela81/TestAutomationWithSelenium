@@ -17,7 +17,7 @@ public abstract class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
     }
