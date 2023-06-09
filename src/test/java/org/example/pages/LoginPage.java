@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
 
@@ -65,6 +66,11 @@ public class LoginPage extends BasePage {
 
     public boolean isErrorMessageDisplayed() {
         return !driver.findElements(By.cssSelector("div#error")).isEmpty();
+    }
+
+    public boolean isErrorMessageDisplayedWithWait() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#error")));
+        return errorMessage.isDisplayed();
     }
 
     public String readErrorMessage() {
