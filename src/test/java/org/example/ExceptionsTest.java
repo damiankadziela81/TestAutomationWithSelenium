@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.pages.ExceptionsPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,14 +18,14 @@ public class ExceptionsTest extends BaseTest{
      */
     //This will fail and throw NoSuchElementException
     @Test
-    public void row2ShouldDisplayWrongWay() {
+    public void noSuchElementExample() {
         ExceptionsPage exceptionsPage = openPage();
         exceptionsPage.clickAddButton();
         Assert.assertTrue(exceptionsPage.is2ndRowDisplayed());
     }
     //This will wait for the element to load
     @Test
-    public void row2ShouldDisplayRightWay() {
+    public void row2ShouldDisplay() {
         ExceptionsPage exceptionsPage = openPage();
         exceptionsPage.clickAddButton();
         exceptionsPage.waitForElementByCss("#row2 .input-field");
@@ -43,9 +45,8 @@ public class ExceptionsTest extends BaseTest{
      * The first one is invisible. So when we are trying to click on the invisible element, we get
      * ElementNotInteractableException.
      */
-
     @Test
-    public void interactionWrongWay() {
+    public void elementNoInteractableExample() {
         ExceptionsPage exceptionsPage = openPage();
         exceptionsPage.clickAddButton();
         exceptionsPage.waitForElementByCss("#row2 .input-field");
@@ -77,15 +78,14 @@ public class ExceptionsTest extends BaseTest{
      * If we try to type text into the disabled input field, we will get ElementNotInteractableException,
      * as in Test case 2.
      */
-
     @Test
-    public void changeText() {
+    public void invalidElementSateExample() {
         ExceptionsPage exceptionsPage = openPage();
         exceptionsPage.clearInputField();
         exceptionsPage.inputTextInto1stField("text");
         Assert.assertTrue(exceptionsPage.isTextIn1stInputFieldEqualTo("text"));
     }
-
+    //first make the field editable
     @Test
     public void changeTextProper() {
         ExceptionsPage exceptionsPage = openPage();
@@ -93,6 +93,42 @@ public class ExceptionsTest extends BaseTest{
         exceptionsPage.clearInputField();
         exceptionsPage.inputTextInto1stField("text");
         exceptionsPage.clickInvisibleSaveButton();
+    }
+
+    /**
+     *Test case 4: StaleElementReferenceException
+     * Open page
+     * Find the instructions text element
+     * Push add button
+     *
+     * Verify instruction text element is no longer displayed
+     * The instructions element is removed from the page when the second row is added.
+     * That’s why we can no longer interact with it. Otherwise, we will see StaleElementReferenceException.
+     *
+     */
+    @Test
+    public void staleElementExample() {
+        ExceptionsPage exceptionsPage = openPage();
+        WebElement instruction = driver.findElement(By.cssSelector("p#instructions"));
+        exceptionsPage.clickAddButton();
+        instruction.isDisplayed();
+    }
+
+    /**
+     * Test case 5: TimeoutException
+     * Open page
+     * Click Add button
+     * Wait for 3 seconds for the second input field to be displayed
+     * Verify second input field is displayed
+     *
+     * The second row shows up after about 5 seconds, so a 3-second timeout is not enough.
+     * That’s why we will get TimeoutException while executing steps in the above test case.
+     */
+    @Test
+    public void timeoutExample() {
+        ExceptionsPage exceptionsPage = openPage();
+        exceptionsPage.clickAddButton();
+        exceptionsPage.waitForElementByCss("#row2 .input-field",3);
     }
 
 

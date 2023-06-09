@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ExceptionsPage extends BasePage {
 
@@ -45,6 +48,11 @@ public class ExceptionsPage extends BasePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(selector)));
     }
 
+    public void waitForElementByCss(String selector, long seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(selector)));
+    }
+
     public void inputTextInto2ndField(String input) {
         row2InputField.sendKeys(input);
     }
@@ -58,8 +66,6 @@ public class ExceptionsPage extends BasePage {
     }
 
     public boolean isConfirmationDisplayed() {
-//        String text = confirmation.getText();
-//        return text.equals("Row 2 was saved");
         return confirmation.getText().equals("Row 2 was saved");
     }
 
