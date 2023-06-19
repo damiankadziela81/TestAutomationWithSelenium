@@ -45,7 +45,7 @@ public class MyStoreCart extends  BasePage{
         return StringPriceToCents(totalPrice.getText());
     }
 
-    private int StringPriceToCents(String price) {
+    public static int StringPriceToCents(String price) {
         if (price != null) {
             price =  price.replace("$","").replace(".","");
             if(price.matches("[0-9]+")) return Integer.parseInt(price);
