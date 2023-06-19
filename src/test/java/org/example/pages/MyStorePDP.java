@@ -15,10 +15,12 @@ public class MyStorePDP extends BasePage{
     @FindBy(css = "[data-button-action]")
     private WebElement addToCartButton;
 
-    @FindBy(xpath = ".//button[text()='Continue shopping']")
+    private final String continueButtonSelector = ".//button[text()='Continue shopping']";
+    @FindBy(xpath = continueButtonSelector)
     private WebElement continueShoppingButton;
 
-    @FindBy(css = ".cart-content-btn .btn-primary")
+    private final String checkoutButtonSelector = ".cart-content-btn .btn-primary";
+    @FindBy(css = checkoutButtonSelector)
     private WebElement checkoutButton;
 
     public MyStorePDP(WebDriver driver) {
@@ -34,12 +36,12 @@ public class MyStorePDP extends BasePage{
     }
 
     public void continueShopping() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//button[text()='Continue shopping']")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(continueButtonSelector)));
         continueShoppingButton.click();
     }
 
     public void checkout() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".cart-content-btn .btn-primary")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(checkoutButtonSelector)));
         checkoutButton.click();
     }
 }
