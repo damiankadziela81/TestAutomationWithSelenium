@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89f252ce-b1bc-4635-abac-c3cd2c428cc5" name="Changes" comment="Change reused selectors to String fields">
+    <list default="true" id="89f252ce-b1bc-4635-abac-c3cd2c428cc5" name="Changes" comment="Updated pom with new webdriver version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pages/MyStorePDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pages/MyStorePDP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyStoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pages/MyStorePLP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pages/MyStorePLP.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +51,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.ExceptionsTest.row2ShouldDisplay">
-    <configuration name="ExceptionsTest.noSuchElementExample" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestAutomationWithSelenium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.ExceptionsTest" />
-      <option name="METHOD_NAME" value="noSuchElementExample" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.MyStoreTest">
     <configuration name="ExceptionsTest.row2ShouldDisplay" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestAutomationWithSelenium" />
       <extension name="coverage">
@@ -105,6 +87,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyStoreTest.checkSortingByPrice" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAutomationWithSelenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MyStoreTest" />
+      <option name="METHOD_NAME" value="checkSortingByPrice" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyStoreTest.checkSortingByPriceDescending" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAutomationWithSelenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MyStoreTest" />
+      <option name="METHOD_NAME" value="checkSortingByPriceDescending" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyStoreTest.productPriceCalculationSummaryInCart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestAutomationWithSelenium" />
       <extension name="coverage">
@@ -123,31 +141,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnitTests.priceConversionTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestAutomationWithSelenium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.UnitTests" />
-      <option name="METHOD_NAME" value="priceConversionTests" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ExceptionsTest.row2ShouldDisplay" />
-        <item itemvalue="TestNG.ExceptionsTest.noSuchElementExample" />
         <item itemvalue="TestNG.MyStoreTest" />
+        <item itemvalue="TestNG.MyStoreTest.checkSortingByPriceDescending" />
+        <item itemvalue="TestNG.MyStoreTest.checkSortingByPrice" />
         <item itemvalue="TestNG.MyStoreTest.productPriceCalculationSummaryInCart" />
-        <item itemvalue="TestNG.UnitTests.priceConversionTests" />
+        <item itemvalue="TestNG.ExceptionsTest.row2ShouldDisplay" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687176816880</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated pom with new webdriver version">
+      <created>1695560948344</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695560948344</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +224,7 @@
     <MESSAGE value="Add new Test cases" />
     <MESSAGE value="Add new method and Test cases" />
     <MESSAGE value="Change reused selectors to String fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change reused selectors to String fields" />
+    <MESSAGE value="Updated pom with new webdriver version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom with new webdriver version" />
   </component>
 </project>
