@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.java.version>4.8.1</selenium.java.version>
         <selenium.support.version>4.8.1</selenium.support.version>
-        <webdriver.version>5.3.2</webdriver.version>
+        <webdriver.version>5.4.1</webdriver.version>
         <testng.version>7.7.0</testng.version>
     </properties>
 
